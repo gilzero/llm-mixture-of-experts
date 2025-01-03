@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LLM Mixture of Experts</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <script>
+        console.log('Document starting to load');
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <div class="container mt-5">
@@ -26,10 +29,10 @@
         </button>
 
         <!-- Results Section -->
-        <div id="results">
-            <h2 class="mb-4">Results</h2>
+        <div id="results" class="mt-4">
+            <h2>Results</h2>
 
-            <!-- Expert 1 (OpenAI) -->
+            <!-- Expert 1 Section -->
             <div id="expert1Results" class="expert-response">
                 <div class="status-indicator"></div>
                 <h3>Expert 1 (OpenAI)</h3>
@@ -38,11 +41,11 @@
                         <span class="sr-only">Loading...</span>
                     </div>
                 </div>
-                <div class="response-content" id="expert1Response"></div>
+                <div id="expert1Response" class="response-content"></div>
                 <div class="error-message"></div>
             </div>
 
-            <!-- Expert 2 (Anthropic) -->
+            <!-- Expert 2 Section -->
             <div id="expert2Results" class="expert-response">
                 <div class="status-indicator"></div>
                 <h3>Expert 2 (Anthropic)</h3>
@@ -51,11 +54,11 @@
                         <span class="sr-only">Loading...</span>
                     </div>
                 </div>
-                <div class="response-content" id="expert2Response"></div>
+                <div id="expert2Response" class="response-content"></div>
                 <div class="error-message"></div>
             </div>
 
-            <!-- Expert 3 (xAI) -->
+            <!-- Expert 3 Section -->
             <div id="expert3Results" class="expert-response">
                 <div class="status-indicator"></div>
                 <h3>Expert 3 (xAI)</h3>
@@ -64,11 +67,21 @@
                         <span class="sr-only">Loading...</span>
                     </div>
                 </div>
-                <div class="response-content" id="expert3Response"></div>
+                <div id="expert3Response" class="response-content"></div>
                 <div class="error-message"></div>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        console.log('Body loaded, about to load main script');
+        window.addEventListener('load', () => {
+            console.log('Window fully loaded');
+        });
+        window.addEventListener('error', (event) => {
+            console.error('Script error:', event.error);
+        });
+    </script>
+    <script src="/script.js" defer></script>
 </body>
 </html>

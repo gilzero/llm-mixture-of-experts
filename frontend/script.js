@@ -1,3 +1,6 @@
+// Immediate debugging
+console.log('Script file loaded');
+
 /**
  * @fileoverview Expert Query Handler - Manages expert consultation system UI interactions
  * Enhanced version with improved logging, error handling, and UI feedback
