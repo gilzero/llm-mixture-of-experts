@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Mixture of Experts</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>LLM Mixture of Experts</h1>
+        <div class="form-group">
+            <label for="queryInput">Enter your query:</label>
+            <input type="text" class="form-control" id="queryInput" placeholder="Type your question here">
+        </div>
+        <button class="btn btn-primary" id="submitButton">Submit</button>
+
+        <div id="results" class="mt-4">
+            <h2>Results</h2>
+            <div id="expert1Results">
+                <h3>Expert 1 (OpenAI)</h3>
+                <p id="expert1Response"></p>
+            </div>
+            <div id="expert2Results">
+                <h3>Expert 2 (Anthropic)</h3>
+                <p id="expert2Response"></p>
+            </div>
+            <div id="expert3Results">
+                <h3>Expert 3 (xAI)</h3>
+                <p id="expert3Response"></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

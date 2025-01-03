@@ -1,0 +1,16 @@
+body {
+    font-family: sans-serif;
+}
+
+#results {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#expert1Results, #expert2Results, #expert3Results {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
