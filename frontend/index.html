@@ -9,26 +9,63 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1>LLM Mixture of Experts</h1>
+        <h1 class="mb-4">LLM Mixture of Experts</h1>
+
+        <!-- Query Form -->
         <div class="form-group">
             <label for="queryInput">Enter your query:</label>
-            <input type="text" class="form-control" id="queryInput" placeholder="Type your question here">
+            <input type="text"
+                   class="form-control"
+                   id="queryInput"
+                   placeholder="Type your question here"
+                   maxlength="1000">
+            <small class="form-text text-muted">Maximum 1000 characters</small>
         </div>
-        <button class="btn btn-primary" id="submitButton">Submit</button>
+        <button class="btn btn-primary mb-4" id="submitButton">
+            Submit Query
+        </button>
 
-        <div id="results" class="mt-4">
-            <h2>Results</h2>
-            <div id="expert1Results">
+        <!-- Results Section -->
+        <div id="results">
+            <h2 class="mb-4">Results</h2>
+
+            <!-- Expert 1 (OpenAI) -->
+            <div id="expert1Results" class="expert-response">
+                <div class="status-indicator"></div>
                 <h3>Expert 1 (OpenAI)</h3>
-                <p id="expert1Response"></p>
+                <div class="loading-spinner">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+                <div class="response-content" id="expert1Response"></div>
+                <div class="error-message"></div>
             </div>
-            <div id="expert2Results">
+
+            <!-- Expert 2 (Anthropic) -->
+            <div id="expert2Results" class="expert-response">
+                <div class="status-indicator"></div>
                 <h3>Expert 2 (Anthropic)</h3>
-                <p id="expert2Response"></p>
+                <div class="loading-spinner">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+                <div class="response-content" id="expert2Response"></div>
+                <div class="error-message"></div>
             </div>
-            <div id="expert3Results">
+
+            <!-- Expert 3 (xAI) -->
+            <div id="expert3Results" class="expert-response">
+                <div class="status-indicator"></div>
                 <h3>Expert 3 (xAI)</h3>
-                <p id="expert3Response"></p>
+                <div class="loading-spinner">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+                <div class="response-content" id="expert3Response"></div>
+                <div class="error-message"></div>
             </div>
         </div>
     </div>

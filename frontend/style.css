@@ -1,16 +1,126 @@
+/* Base styles */
 body {
-    font-family: sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.5;
+    color: #333;
 }
 
+/* Results container */
 #results {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 5px;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#expert1Results, #expert2Results, #expert3Results {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #eee;
-    border-radius: 5px;
+/* Expert response containers */
+.expert-response {
+    position: relative;
+    min-height: 120px;
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Loading state */
+.expert-response.loading {
+    background-color: #f8fafc;
+}
+
+.expert-response.loading .loading-spinner {
+    display: flex;
+}
+
+/* Success state */
+.expert-response.success {
+    border-color: #10b981;
+    background-color: #f0fdf4;
+}
+
+/* Error state */
+.expert-response.error {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+}
+
+/* Response content */
+.response-content {
+    position: relative;
+    min-height: 2rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Error message */
+.error-message {
+    margin-top: 0.5rem;
+    color: #ef4444;
+    font-size: 0.875rem;
+    font-style: italic;
+}
+
+/* Status indicator */
+.status-indicator {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.status-indicator.success {
+    background-color: #10b981;
+}
+
+.status-indicator.error {
+    background-color: #ef4444;
+}
+
+.status-indicator.loading {
+    background-color: #f59e0b;
+    animation: pulse 2s infinite;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Form elements */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+    transition: all 0.2s ease;
+}
+
+.btn-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
 }
